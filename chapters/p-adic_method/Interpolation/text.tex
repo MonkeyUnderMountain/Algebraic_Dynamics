@@ -1,14 +1,51 @@
 \section{Interpolation}
 
-    The main reference of this section is \cite{Poonen14interpolation}.
+
+
+\subsection{Interpolation of analytic maps}
+
+    The main reference of this section is \cite{Amerik11nonpreperiodic,BGT10DMLetale,Poonen14interpolation}.
     We first state the main theorem of this section.
 
-    \begin{theorem}\label{prop:Poonen14_p-adic_interpolation_of_iterates}
-        Let \(\kk\) be a complete non-archimedean field of characteristic \(0\) with \(\characteristic \calk_\kk = p\) and \(|p|_\kk = 1/p\).
-        Suppose that \(f\in \kk\{ \underline{T} \}^d\) satisfies \(\|f(\underline{T}) - \underline{T}\| \leq r_p\).
-        Then there exists a function \(g \in \kk\{ \underline{T}, n \}\) such that for each \(n \in \bbZ_{\geq 0}\) and each \(\underline{t} \in \kk^d\),
-        \[g(\underline{t}, n) = f^n(\underline{t}).\]
-        \Yang{To be checked.}
+    \begin{theorem}[{ref.\cite[Theorem 1]{Poonen14interpolation}\ cf.\cite[Theorem 3.3]{BGT10DMLetale}}]\label{prop:Poonen14_p-adic_interpolation_of_iterates}
+        Let \(\kk\) be a complete non-archimedean field of characteristic \(0\) with \(|p|_\kk = 1/p\).
+        Set \(r_p = p^{-1/(p-1)}\).
+        Let \(E = E(0,1) = \{x \in \kk^d \mid \|x\| \leq 1\}\) be the closed unit ball in \(\kk^d\).
+        Here the norm on \(\kk^d\) or \(\kk^\circ\{ \underline{T} \}^d\) is the supremum norm, i.e., \(|x| = \max_{1 \leq i \leq d} |x_i|\).
+        
+        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{T} \}^d\) satisfies \(\|\Phi - \id_E\| \leq r_p\).
+        Then there exists a function \(F \in \kk\{ \underline{T}, S \}^d\) such that for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\),
+        \[F(x, n) = \Phi^n(x).\]
+        % \Yang{To be checked.}
     \end{theorem}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
 
     \Yang{If \(f\) is invertible, can we see that \(g\) is unique?}
+
+
+\subsection{Interpolation on an analytic open subset of morphisms}
+
+    The main reference of this section is \cite[Section 3.2]{Xie25ZDOsurfaces}.
+    We first state the main theorem of this section.
+
+    \begin{theorem}[{ref.\cite[Proposition 3.24]{Xie25ZDOsurfaces}}]\label{thm:Xie25_DML_for_adelic_general_points}
+        Let \(\kk\) be a finitely generated field over \(\bbQ\), \(X\) a projective variety defined over \(\kk\), and \(f \colon X \ratmap X\) a dominant rational self-map defined over \(\kk\).
+        
+        There exists an iteration \(g = f^m\) of \(f\), an embedding \(\kk \hookrightarrow \bbC_p\) for some prime \(p\geq 3\), an analytic open subset \(U \subseteq X(\bbC_p)\) and an analytic map \(\Phi: \bbC_p^\circ \times U \to U\) such that
+        \begin{enumerate}[label=(\arabic*)]
+            \item \(U \cong (\bbC_p^{\circ})^d\) analytically, where \(d = \dim X\);
+            \item \(g\) is well-defined on \(U\), \(U\) is invariant under \(g\) and \(\|g|_U - \id_U\| < 1/p\);
+            \item \(\Phi(n, x) = g^n(x)\) for each \(n \in \bbZ_{\geq 0}\) and each \(x \in U\);
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{lemma}
+        \Yang{There is a good model for \((X,f)\).}
+    \end{lemma}
+
+    \begin{example}\label{eg:interpolation_for_Jordan_block_of_elliptic_curves}
+        Let \(X = E \times E\) with \(E\) an elliptic curve without complex multiplication defined over a number field \(\kk\), and let \(f \colon X \to X\) be the endomorphism defined by \((a,b) \mapsto (a + b, b)\).
+        \Yang{To be continued.}
+    \end{example}
