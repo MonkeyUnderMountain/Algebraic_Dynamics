@@ -1,0 +1,24 @@
+\section{DML conjecture for adelic general points}
+
+    The main reference of this section is \cite[Section 3.2]{Xie25ZDOsurfaces}.
+    We first state the main theorem of this section.
+
+    \begin{theorem}[{ref.\cite[Proposition 3.24]{Xie25ZDOsurfaces}}]\label{thm:Xie25_DML_for_adelic_general_points}
+        Let \(\kk\) be a finitely generated field over \(\bbQ\), \(X\) a projective variety defined over \(\kk\), and \(f \colon X \ratmap X\) a dominant rational self-map defined over \(\kk\).
+        
+        There exists an iteration \(g = f^m\) of \(f\), an embedding \(\kk \hookrightarrow \bbC_p\) for some prime \(p\geq 3\), an (\Yang{analytic}) open subset \(U \subseteq X(\bbC_p)\) and an analytic map \(\Phi: \bbC_p^\circ \times U \to U\) such that
+        \begin{enumerate}[label=(\arabic*)]
+            \item \(U \cong (\bbC_p^{\circ})^d\) analytically, where \(d = \dim X\);
+            \item \(g\) is well-defined on \(U\), \(U\) is invariant under \(g\) and \(\|g|_U - \id_U\| < 1/p\);
+            \item \(\Phi(n, x) = g^n(x)\) for each \(n \in \bbZ_{\geq 0}\) and each \(x \in U\);
+        \end{enumerate}
+    \end{theorem}
+
+    \begin{lemma}
+        \Yang{There is a good model for \((X,f)\).}
+    \end{lemma}
+
+    \begin{example}\label{eg:interpolation_for_Jordan_block_of_elliptic_curves}
+        Let \(X = E \times E\) with \(E\) an elliptic curve without complex multiplication defined over a number field \(\kk\), and let \(f \colon X \to X\) be the endomorphism defined by \((a,b) \mapsto (a + b, b)\).
+        \Yang{To be continued.}
+    \end{example}
