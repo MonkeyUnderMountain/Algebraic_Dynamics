@@ -2,9 +2,34 @@
 
     The main reference of this section is \cite{Xie25ZDOsurfaces}.
 
-    Let \(\kk\) be a number field, and let \(M_\kk\) be the set of places of \(\kk\).
+    % Let \(\kk\) be a number field, and let \(M_\kk\) be the set of places of \(\kk\).
 
 \subsection{Basic adelic subset}
+
+    Let \(\kk\) be a finitely generated field over \(\bbQ\) and \(\kkk\) be its algebraic closure.
+
+    Let \(X\) be a variety over \(\kk\) with \(\kk\) a finitely generated field over \(\bbQ\).
+    Set \(M_\kk\) be the set of places of \(\kk\).
+    For each \(v\in M_\kk\).
+
+    Let \(\calI_\kk\) be the set of all embeddings \(\sigma: K\to \bbC_\sigma\) over \(\kk\), where \(\bbC_\sigma = \bbC_p\) or \(\bbC\) according to whether \(v\) is non-archimedean or archimedean.
+    For each \(\sigma\in \calI_\kk\), set \(\calI_\sigma = \{\tau: \kkk \to \bbC_v \mid \tau|_\kk = \sigma\}\).
+    For every \(\tau \in \calI_\kkk\), we have an induced map \(\phi_\tau: X(\kkk) \to X(\bbC_\tau)\).
+
+    On \(X(\bbC_\tau)\), we have the analytic topology induced from \(\bbC_\tau\).
+    
+
+    \begin{definition}\label{def:basic_adelic_subset}
+        \[ X_\kk(\sigma,U) := \bigcup_{\tau\in \calI_\sigma} \phi_\tau^{-1}(U) \subseteq X(\kkk) \]
+        is called a \emph{basic adelic open subset} of \(X(\kkk)\), where \(U\subseteq X(\bbC_\sigma)\) is an open subset in the analytic topology.
+    \end{definition}
+
+    \begin{theorem}\label{thm:intersection_of_basic_adelic_subset_is_nonempty}
+        Suppose that \(X\) is irreducible.
+        Then for any finite collection of places \(\sigma_1,\ldots,\sigma_n \in M_\kk\) and any basic adelic open subsets \(X_\kk(\sigma_i,U_i)\) for \(i=1,\ldots,n\), the intersection
+        \[ \bigcap_{i=1}^n X_\kk(\sigma_i,U_i) \]
+        is non-empty.
+    \end{theorem}
 
 
 \subsection{General adelic subset}
@@ -13,3 +38,5 @@
 \subsection{Adelic topology}
 
     \Yang{Is \(\bbA^1(\bbQ)\) adelic closed in \(\bbA^1(\overline{\bbQ})\) with adelic topology? If so, why?}
+
+    \Yang{Describe all adelic closed subset in \(\bbA^1(\overline{\bbQ})\).}
