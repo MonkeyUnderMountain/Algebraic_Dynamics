@@ -8,11 +8,11 @@
 
     Let \(\kk\) be a finitely generated field over \(\bbQ\) and \(\kkk\) be its algebraic closure.
 
-    Let \(X\) be a variety over \(\kk\) with \(\kk\) a finitely generated field over \(\bbQ\).
-    Set \(M_\kk\) be the set of places of \(\kk\).
-    For each \(v\in M_\kk\).
+    % Let \(X\) be a variety over \(\kk\) with \(\kk\) a finitely generated field over \(\bbQ\).
+    % Set \(M_\kk\) be the set of places of \(\kk\).
+    % For each \(v\in M_\kk\).
 
-    Let \(\calI_\kk\) be the set of all embeddings \(\sigma: K\to \bbC_\sigma\) over \(\kk\), where \(\bbC_\sigma = \bbC_p\) or \(\bbC\) according to whether \(v\) is non-archimedean or archimedean.
+    Let \(\calI_\kk\) be the set of all embeddings \(\sigma: \kk \to \bbC_\sigma\) over \(\kk\), where \(\bbC_\sigma = \bbC_p\) or \(\bbC\) according to whether \(v\) is non-archimedean or archimedean.
     For each \(\sigma\in \calI_\kk\), set \(\calI_\sigma = \{\tau: \kkk \to \bbC_v \mid \tau|_\kk = \sigma\}\).
     For every \(\tau \in \calI_\kkk\), we have an induced map \(\phi_\tau: X(\kkk) \to X(\bbC_\tau)\).
 
@@ -20,8 +20,12 @@
     
 
     \begin{definition}\label{def:basic_adelic_subset}
+        Let \(\sigma,\sigma_i \in \calI_\kk\) and let \(U,U_i \subseteq X(\bbC_\sigma)\) be an open subset in the analytic topology.
+        We define
         \[ X_\kk(\sigma,U) := \bigcup_{\tau\in \calI_\sigma} \phi_\tau^{-1}(U) \subseteq X(\kkk) \]
-        is called a \emph{basic adelic open subset} of \(X(\kkk)\), where \(U\subseteq X(\bbC_\sigma)\) is an open subset in the analytic topology.
+        and 
+        \[ X_\kk(\{\sigma_i,U_i\}_{i=1}^n) := \bigcap_{i=1}^n X_\kk(\sigma_i,U_i) \subseteq X(\kkk). \]
+        The subset of form \(X_\kk(\{\sigma_i,U_i\})\) is called a \emph{basic adelic open subset} of \(X(\kkk)\), where \(U\subseteq X(\bbC_\sigma)\) is an open subset in the analytic topology.
     \end{definition}
 
     \begin{theorem}\label{thm:intersection_of_basic_adelic_subset_is_nonempty}
