@@ -54,12 +54,14 @@
         Let \(\kk\) be a complete non-archimedean field of characteristic \(0\) with \(|p|_{\kk} = 1/p\).
         Set \(r_p = p^{-1/(p-1)}\).
         
-        
-        
-        Then there exists a function \(F \in \kk\{ \underline{T}, S \}^d\) such that for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\),
+        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{T} \}^d\) satisfies \(r := r_p/\|\Phi - \id_E\| > 1\).
+        Then there exists a function \(F \in \kk\{ \underline{T}, S/s \}^d\), \(1<s<r\), such that for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\),
         \[F(x, n) = \Phi^n(x).\]
     \end{theorem}
     \begin{proof}
+        Consider the formal series
+        \[ F(\underline{T}, S) := \sum_{n=0}^\infty \binom{S}{n} \Delta^n(\id_E)(\underline{T}) = \sum_{n=0}^\infty f_n. \]
+        We only need to show that \(f_n \in \kk\{\underline{T}, S/s\}^d\) and \(\|f_n\| \to 0\) as \(n \to \infty\).
         
         % And \(\Delta\) is \(\kk\)-linear on \(\kk^\circ\{ \underline{T} \}^d\).
         % Note that \(\Delta(\Phi) = \Phi \circ \Phi - \Phi = \Phi \circ \Delta(\id_E)\) and hence \(\Delta^n(\Phi) = \Phi \circ \Delta^n(\id_E)\).
@@ -79,9 +81,25 @@
 
 \subsection{Pick integral models}
 
-    \begin{lemma}
-        \Yang{There is a good model for \((X,f)\).}
+    \begin{lemma}\label{lem:existence_of_good_model_for_smooth_things}
+        Let \(f: X \ratmap X\) be a dominant rational self-map of a projective variety defined over a finitely generated field \(\kk\) over \(\bbQ\).
+        
+        Then there exists a subring \(R \subseteq \kk\) of finite type over \(\bbZ\), 
+        a projective scheme \(\calX\) over \(\Spec R\) with generic fiber \(X\), 
+        and a rational self-map \(\calf: \calX \ratmap \calX\) over \(\Spec R\) with generic fiber \(f\) 
+        such that 
+        \begin{enumerate}
+            \item for every prime ideal \(\frakp\) of \(R\), the special fiber \(\calX_{\frakp}\) is geometrically integral and of the same dimension as \(X\);
+            \item the union of non-smooth locus of \(\calX\) and indeterminacy locus, non-\'etale locus of \(\calf\) does not contain any entire special fiber \(\calX_{\frakp}\);
+        \end{enumerate}
+
+        Moreover, if \(X\) is smooth (resp.\ \(f\) is a morphism, resp.\ \(f\) is \'etale), then we can further require that \(\calX\) is smooth over \(\Spec R\) (resp.\ \(\calf\) is a morphism, resp.\ \(\calf\) is \'etale over \(\Spec R\)).
     \end{lemma}
+
+
+    \Yang{We can embedd \(R\) into \(\bbC_p\) for some \(p\).}
+
+
 
 
 \subsection{Interpolation on an analytic open subset of morphisms}
