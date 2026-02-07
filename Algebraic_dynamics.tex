@@ -35,27 +35,29 @@
    \frontmatter
 
    \chapter*{Preface}
-   \addcontentsline{toc}{chapter}{Preface}
+      \addcontentsline{toc}{chapter}{Preface}
 
-   This document provides an introduction to algebraic dynamics, 
-   focusing on the study of dynamical systems defined by algebraic maps on algebraic varieties. 
-   The main interesting objects are \((X,f)\), 
-   where \(X\) is an algebraic variety over a finitely generated field \(\kk\) of characteristic zero 
-   and \(f: X \to X\) is a dominant rational self-map defined over \(\kk\).
+      This document provides an introduction to algebraic dynamics, 
+      focusing on the study of dynamical systems defined by algebraic maps on algebraic varieties. 
+      The main interesting objects are \((X,f)\), 
+      where \(X\) is an algebraic variety over a finitely generated field \(\kk\) of characteristic zero 
+      and \(f: X \to X\) is a dominant rational self-map defined over \(\kk\).
 
    \tableofcontents % 生成目录
 
    \mainmatter
 
-   \chapter{Dynamics on Neron Severi groups}
+   % \chapter{Dynamics on Neron Severi groups}
 
-   \chapter{Examples of dynamics}
+   \chapter{Classifications and examples of dynamics}
       \input{chapters/Examples_of_dynamics/on_ruled_surfaces/text.tex}
       \input{chapters/Examples_of_dynamics/On_abelian_varieties/text.tex}
 
-   \chapter{Dynamical Iitaka theory}
-   % \appendix
 
+   \chapter[p-adic method]{\(p\)-adic method}
+      \input{chapters/p-adic_method/Adelic_topology/text.tex}
+      \input{chapters/p-adic_method/Interpolation/text.tex}
+      \input{chapters/p-adic_method/Applications/text.tex}
 
 
    \printbibliography[heading=bibintoc, title={References}] % 打印参考文献
