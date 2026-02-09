@@ -24,6 +24,8 @@
     \paragraph{Assumption} We further assume that \(X\) is distinguished.
     And there exists a subvariety \(\tilde{Z} \subseteq \tilde{X}\) such that \(\tilde{f}(\tilde{X}) = \tilde{Z}\) and \(\tilde{f}|_{\tilde{Z}}\) is an automorphism of \(\tilde{Z}\).
 
+    Recall that \(A\) is called distinguished if there exists a surjective morphism \(\kkk\{ x_1, \ldots, x_n \} \to A\) such that the induced norm on \(A\) coincides with the spectral norm \(\rho_A\).
+
     Set \(Y = V(\Qnil_f) \subseteq X\) be the closed analytic subspace defined by the ideal \(\Qnil_f\).
     
 
@@ -40,11 +42,14 @@
     \end{theorem}
 
 
-
+    \paragraph{Zariski dense orbit in dimension two}
     Let \(X = \scrM(\kkk{x,y})\) be the closed unit polydisc of dimension two over \(\kkk\).
     Suppose that \(f: X \to X\) satisfies 
     \[ \tilde{f}: (x,y) \mapsto (a x + b, 0). \]
+    In this case, the attractor \(Y\) is the line defined by \(y = 0\), and \(f|_{Y}\) is an automorphism of \(Y\).\Yang{To be revised. }
 
     \begin{proposition}\label{prop:local_ZDO_of_surface}
-
+        Suppose that \(f|_{Y}\) is not of finite order and \(f^{-1}(Y) \neq X\).
+        Then there exists an affinoid subdomain \(U \subseteq X\) such that for every point \(x \in U\), the orbit \(\{ f^n(x) \}_{n \geq 0}\) is Zariski dense in \(X\).
+        \Yang{}
     \end{proposition}

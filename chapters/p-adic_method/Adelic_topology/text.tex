@@ -1,46 +1,95 @@
 \section{Adelic topology}
 
     The main reference of this section is \cite{Xie25ZDOsurfaces}.
+    Fix a finitely generated field \(\kk\) over \(\bbQ\) and its algebraic closure \(\kkk\).
+    Let \(X\) be a (geometrically integral) variety over \(\kk\).
 
-    % Let \(\kk\) be a number field, and let \(M_\kk\) be the set of places of \(\kk\).
+    \begin{notation}\label{notation:trivial_and_nontrivial_place_on_subfiled}
+        Let \(L/K\) be a field extension.
+        We denote by \(M_{L/K}\) (resp. \(M_{L,K})\) the set of places of \(L\) which restrict to \(K\) is trivial (resp. non-trivial).
+    \end{notation}
 
-\subsection{Basic adelic subset}
+\subsection{Adelic subset}
 
-    Let \(\kk\) be a finitely generated field over \(\bbQ\) and \(\kkk\) be its algebraic closure.
 
     % Let \(X\) be a variety over \(\kk\) with \(\kk\) a finitely generated field over \(\bbQ\).
     % Set \(M_\kk\) be the set of places of \(\kk\).
     % For each \(v\in M_\kk\).
 
-    Let \(\calI_\kk\) be the set of all embeddings \(\sigma: \kk \to \bbC_\sigma\) over \(\kk\), where \(\bbC_\sigma = \bbC_p\) or \(\bbC\) according to whether \(v\) is non-archimedean or archimedean.
-    For each \(\sigma\in \calI_\kk\), set \(\calI_\sigma = \{\tau: \kkk \to \bbC_v \mid \tau|_\kk = \sigma\}\).
-    For every \(\tau \in \calI_\kkk\), we have an induced map \(\phi_\tau: X(\kkk) \to X(\bbC_\tau)\).
+    \paragraph{Notations}
+    Let \(I_\kk\) be the set of all embeddings \(\sigma: \kk \to \bbC_\sigma\) over \(\kk\), where \(\bbC_\sigma = \bbC_p\) or \(\bbC\).
+    Every such \(\sigma\) corresponds to a place \(v\in M_{\kk,\bbQ}\) by pulling back the standard absolute value on \(\bbC_p\) or \(\bbC\).
+    For each \(\sigma\in I_\kk\), set \(E_\sigma = \{\tau: \kkk \to \bbC_v \mid \tau|_\kk = \sigma\}\).
+    For every \(\tau \in I_\kk\), we have an induced map \(\phi_\tau: X(\kkk) \to X(\bbC_\tau)\).
 
     On \(X(\bbC_\tau)\), we have the analytic topology induced from \(\bbC_\tau\).
     
 
     \begin{definition}\label{def:basic_adelic_subset}
-        Let \(\sigma,\sigma_i \in \calI_\kk\) and let \(U,U_i \subseteq X(\bbC_\sigma)\) be an open subset in the analytic topology.
+        Let \(\sigma,\sigma_i \in I_\kk\) and let \(U,U_i \subseteq X(\bbC_\sigma)\) be an open subset in the analytic topology.
         We define
-        \[ X_\kk(\sigma,U) := \bigcup_{\tau\in \calI_\sigma} \phi_\tau^{-1}(U) \subseteq X(\kkk) \]
+        \[ X_\kk(\sigma,U) \coloneqq \bigcup_{\tau\in E_\sigma} \phi_\tau^{-1}(U) \subseteq X(\kkk) \]
         and 
-        \[ X_\kk(\{\sigma_i,U_i\}_{i=1}^n) := \bigcap_{i=1}^n X_\kk(\sigma_i,U_i) \subseteq X(\kkk). \]
-        The subset of form \(X_\kk(\{\sigma_i,U_i\}_{i=1}^n)\) is called a \emph{basic adelic open subset} of \(X(\kkk)\), where \(U\subseteq X(\bbC_\sigma)\) is an open subset in the analytic topology.
+        \[ X_\kk(\{\sigma_i,U_i\}_{i=1}^n) \coloneqq \bigcap_{i=1}^n X_\kk(\sigma_i,U_i) \subseteq X(\kkk). \]
+        The subset of form \(X_\kk(\{\sigma_i,U_i\}_{i=1}^n)\) is called a \emph{basic adelic open subset} of \(X(\kkk)\).
     \end{definition}
 
-    \begin{theorem}[{ref. \cite[Proposition 3.9]{Xie25ZDOsurfaces} cf. \cite{}}]\label{thm:intersection_of_basic_adelic_subset_is_nonempty}
-        Suppose that \(X\) is irreducible.
-        Then for any finite collection of places \(\sigma_1,\ldots,\sigma_n \in M_\kk\) and any basic adelic open subsets \(X_\kk(\sigma_i,U_i)\) for \(i=1,\ldots,n\), the intersection
+    \begin{definition}\label{def:general_adelic_subset}
+        A \emph{general adelic subset} of \(X(\kkk)\) is defined to a subset of the form \(\pi(B)\) with \(\pi: Y \to X\) a flat morphism of varieties over \(\kk\) and \(B\) a basic adelic open subset of \(Y(\kkk)\). 
+    \end{definition}
+
+    Recall that on \(\bbA^1_\bbQ\), the Artin-Whaples Approximation Theorem says that for any finite collection of places \(v_1,\ldots,v_n\) of \(\bbQ\) and any open subsets \(U_i \subseteq \bbQ_{v_i}\), 
+    the intersection \(\bigcap_{i=1}^n (U_i\cap \bbA^1(\bbQ))\) is non-empty.
+    The following lemma is a generalization and it is the motivation of the definition of adelic subsets.
+
+    \begin{lemma}[{ref. \cite[Proposition 3.9]{Xie25ZDOsurfaces}, cf. \cite[Theorem 1.2]{ManZan14:AWapproxOnVarieties}}]\label{lem:intersection_of_basic_adelic_subset_is_nonempty}
+        For any finite collection of basic adelic open subsets \(X_\kk(\sigma_i,U_i)\), the intersection
         \[ \bigcap_{i=1}^n X_\kk(\sigma_i,U_i) \]
         is non-empty.
-    \end{theorem}
+    \end{lemma}
+    \begin{slogan}
+        On a variety, the small open ball in one place will be dense with respect to other places.
+    \end{slogan}
 
+    \begin{proposition}\label{prop:basic_properties_of_geneal_adelic_subset}
+        Let \(X\) be a variety over \(\kk\) and \(\bfl\) a finite field extension of \(\kk\).
+        Then the following properties hold:
+        \begin{enumerate}
+            \item let \(f:Y \to X_\bfl\) be a morphism and \(A \subset X_\bfl(\kkk)\) a general adelic subset, then \(f^{-1}(A)\) is a general adelic subset of \(Y\);
+            
+        \end{enumerate}
+    \end{proposition}
 
-\subsection{General adelic subset}
-
+    \begin{remark}\label{rmk:defined_field_and_adelic_subset}
+        Although adelic subsets are subsets of \(X(\kkk)\), they depend on the field \(\kk\) over which \(X\) is defined.
+        \Yang{For example}
+    \end{remark}
 
 \subsection{Adelic topology}
+
+    \begin{definition}\label{def:adelit_topology}
+        The \emph{adelic topology} on \(X(\kkk)\) is defined to be the topology generated by all general adelic subsets of \(X(\kkk)\).
+    \end{definition}
+
 
     \Yang{Is \(\bbA^1(\bbQ)\) adelic closed in \(\bbA^1(\overline{\bbQ})\) with adelic topology? If so, why?}
 
     \Yang{Describe all adelic closed subset in \(\bbA^1(\overline{\bbQ})\).}
+
+    \begin{proposition}\label{prop:basic_properties_of_adelic_topology}
+        We have the following properties of adelic topology:
+        \begin{enumerate}
+            \item adelic topology is finer than Zariski topology (in other words, every Zariski open subset is adelic open);
+            \item morphisms of varieties are continuous with respect to adelic topology;
+            \item flat morphisms of varieties are open with respect to adelic topology.
+        \end{enumerate}
+    \end{proposition}
+
+    \begin{proposition}\label{prop:galois_action_is_continuous_wrt_adelic_and_profinite_topo}
+        The action of \(\Gal(\kkk/\kk)\) on \(X(\kkk)\), namely \((\sigma,x) \mapsto \sigma(x)\), is continuous with respect to the adelic topology on \(X(\kkk)\) and the profinite topology on \(\Gal(\kkk/\kk)\).
+    \end{proposition}
+
+    \begin{theorem}\label{thm:intersection_of_adelic_open_subset}
+        Adelic topology preserves the irreducibility of varieties.
+        Explicitly, on a variety, the intersection of any finite collection of non-empty adelic open subsets is non-empty.
+    \end{theorem}
