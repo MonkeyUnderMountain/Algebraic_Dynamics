@@ -21,12 +21,20 @@
         \[ \rho_A\left( (f^*)^{m}(g) \right) \leq c \rho_A(g). \]
     \end{proposition}
 
-    \paragraph{Assumption} We further assume that \(X\) is distinguished.
-    And there exists a subvariety \(\tilde{Z} \subseteq \tilde{X}\) such that \(\tilde{f}(\tilde{X}) = \tilde{Z}\) and \(\tilde{f}|_{\tilde{Z}}\) is an automorphism of \(\tilde{Z}\).
+    \paragraph{Assumption} We further assume that there exists a subvariety \(\tilde{Z} \subseteq \tilde{X}\) such that \(\tilde{f}(\tilde{X}) = \tilde{Z}\) and \(\tilde{f}|_{\tilde{Z}}\) is an automorphism of \(\tilde{Z}\).
 
+    \begin{proposition}
+        prop of stable and distinguished
+    \end{proposition}
     Recall that \(A\) is called distinguished if there exists a surjective morphism \(\kkk\{ x_1, \ldots, x_n \} \to A\) such that the induced norm on \(A\) coincides with the spectral norm \(\rho_A\).
 
     Set \(Y = V(\Qnil_f) \subseteq X\) be the closed analytic subspace defined by the ideal \(\Qnil_f\).
+
+
+    \begin{proposition}\label{prop:Y_is_Z_after_reduction}
+        We have \(\tilde{Y} = \tilde{Z}\).
+        \Yang{To be checked}
+    \end{proposition}
     
 
     The main result is the following theorem.
@@ -34,11 +42,14 @@
     \begin{theorem}[{ref. \cite[Theorem 8.3]{Xie25ZDOsurfaces}}]\label{thm:attractor_is_Zariski_closed_and_endomorphism_descends}
         We have 
         \begin{enumerate}
-            \item \(\widetilde{\Qnil_f} = I_{\tilde{Z}}\), the ideal of \(\tilde{Z}\) in \(\tilde{X}\);
+            % \item \(\widetilde{\Qnil_f} = I_{\tilde{Z}}\), the ideal of \(\tilde{Z}\) in \(\tilde{X}\);
             \item \(Y\) is distinguished, and \(f|_{Y}: Y \to Y\) is an automorphism;
             \item there exists a unique \(\psi: X \to Y\) making \(Y \injmap X\) a section of \(\psi\), 
                 such that \(f|_{Y} \circ \psi = \psi \circ f\); 
         \end{enumerate}
+        Moreover, there exists \(C>0\), \(0 < \lambda < 1\) such that for any \(x \in X\) and any \(n \geq 0\), we have
+        \[ d\left( f^n(x), f^n(\psi(x)) \right) \leq C \lambda^n. \]
+        \Yang{To be revised.}
     \end{theorem}
 
 
