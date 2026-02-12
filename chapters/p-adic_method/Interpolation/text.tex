@@ -1,18 +1,20 @@
 \section{Interpolation}
 
-    The main reference of this section is \cite{Amerik11nonpreperiodic,BGT10DMLetale,Poonen14interpolation}.
-    Let \(\kk\) be a finitely generated field over \(\bbQ\) and \(\kkk\) be its algebraic closure.
-    Let \(X\) be a variety over \(\kk\) and \(f: X \ratmap X\) a dominant rational self-map defined over \(\kk\).
-    We want to show that after iteration, we can interpolate the iterates of \(f\) on an analytic open subset of \(X(\bbC_p)\) for some prime \(p\).
+    The main reference of this section is \cite{Amerik11nonpreperiodic,BGT10DMLetale,Poonen14interpolation,Xie25ZDOsurfaces}.
+    
+    % Let \(\kk\) be a finitely generated field over \(\bbQ\) and \(\kkk\) be its algebraic closure.
+    % Let \(X\) be a variety over \(\kk\) and \(f: X \ratmap X\) a dominant rational self-map defined over \(\kk\).
+    % We want to show that after iteration, we can interpolate the iterates of \(f\) on an analytic open subset of \(X(\bbC_p)\) for some prime \(p\).
 
 \subsection{Interpolation of analytic maps}
 
     In this subsection, we find the interpolation of analytic maps on an analytic disk.
     Fix a complete non-archimedean field \(\kk\) of characteristic \(0\) with \(|p|_{\kk} = 1/p\) for some prime \(p\).
+    Set \(r_p = p^{-1/(p-1)}\).
     We use the method of difference operators given in \cite{Poonen14interpolation}.
 
-    Let \(E = E(0,1) = \{x \in \kk^d \mid \|x\| \leq 1\}\) be the closed unit ball in \(\kk^d\) and \(\Phi: E \to E\) be an analytic map, i.e., \(\Phi \in \kk^\circ\{ \underline{T} \}^d\).
-    Here the norm on \(\kk^d\) or \(\kk^\circ\{ \underline{T} \}^d\) is the supremum norm, i.e., \(|x| = \max_{1 \leq i \leq d} |x_i|\).
+    Let \(E = E(0,1) = \{x \in \kk^d \mid \|x\| \leq 1\}\) be the closed unit ball in \(\kk^d\) and \(\Phi: E \to E\) be an analytic map, i.e., \(\Phi \in \kk^\circ\{ \underline{X} \}^d\).
+    Here the norm on \(\kk^d\) or \(\kk^\circ\{ \underline{X} \}^d\) is the supremum norm, i.e., \(|x| = \max_{1 \leq i \leq d} |x_i|\).
     For every analytic map \(h\) from \(E\) to \(E\), we define 
     \[ \Delta(h) := h \circ \Phi - h, \quad \Delta^n(h) := \Delta(\Delta^{n-1}(h)) \text{ for } n \geq 1, \]
     and \(\Delta^0(h) = h\).
@@ -42,31 +44,40 @@
     \end{proof}
 
     \begin{lemma}\label{lem:norm_of_difference_operators_of_Phi}
-        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{T} \}^d\) satisfies \(\|\Phi - \id_E\| \leq r_p\).
+        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{X} \}^d\) satisfies \(\|\Phi - \id_E\| \leq r\).
         Then 
-        \Yang{To be added.}
+        \[ \|\Delta^n(\id_E)\| \leq r^n \]
+        % \Yang{To be added.}
     \end{lemma}
     \begin{proof}
-        \Yang{To be added.}
+        By \Yang{ref}, we have 
+        \[ \|\Delta(h)\| = \|h \circ \Phi - h\| \leq \|h\| \cdot \|\Phi - \id_E\| \leq r \|h\|. \]
+        Hence by induction, the result follows.
+        % \Yang{To be added.}
     \end{proof}
 
-    \begin{theorem}[{ref.\cite[Theorem 1]{Poonen14interpolation}\ cf.\cite[Theorem 3.3]{BGT10DMLetale}}]\label{prop:Poonen14_p-adic_interpolation_of_iterates}
-        Let \(\kk\) be a complete non-archimedean field of characteristic \(0\) with \(|p|_{\kk} = 1/p\).
-        Set \(r_p = p^{-1/(p-1)}\).
-        
-        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{T} \}^d\) satisfies \(r := r_p/\|\Phi - \id_E\| > 1\).
-        Then there exists a function \(F \in \kk\{ \underline{T}, S/s \}^d\), \(1<s<r\), such that for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\),
+    \begin{theorem}[{ref.\cite[Theorem 1]{Poonen14interpolation},\ cf.\cite[Theorem 3.3]{BGT10DMLetale}}]\label{prop:Poonen14_p-adic_interpolation_of_iterates}
+        Suppose that \(\Phi = (\Phi_1,\cdots,\Phi_d)\in \kk^\circ\{ \underline{X} \}^d\) satisfies \(r \coloneqq \|\Phi - \id_E\| < r_p\).
+        Then there exists a unique function \(F \in \kk\{ \underline{X}, T/s \}^d\), such that for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\),
         \[F(x, n) = \Phi^n(x).\]
+        Here \(s\) is any real number with \(1 < s < r_p/r\).
     \end{theorem}
     \begin{proof}
         Consider the formal series
-        \[ F(\underline{T}, S) := \sum_{n=0}^\infty \binom{S}{n} \Delta^n(\id_E)(\underline{T}) = \sum_{n=0}^\infty f_n. \]
-        We only need to show that \(f_n \in \kk\{\underline{T}, S/s\}^d\) and \(\|f_n\| \to 0\) as \(n \to \infty\).
-        
-        % And \(\Delta\) is \(\kk\)-linear on \(\kk^\circ\{ \underline{T} \}^d\).
-        % Note that \(\Delta(\Phi) = \Phi \circ \Phi - \Phi = \Phi \circ \Delta(\id_E)\) and hence \(\Delta^n(\Phi) = \Phi \circ \Delta^n(\id_E)\).
-        
-        \Yang{To be added.}
+        \[ F(\underline{X}, T) \coloneqq \sum_{n=0}^\infty \binom{T}{n} \Delta^n(\id_E)(\underline{X}). \]
+        Recall the Newton's binomial function
+        \[ \binom{T}{n} \coloneqq \frac{T(T-1)\cdots(T-n+1)}{n!} \in \kk[T]. \]
+        Since \(\binom{T}{n}\) is a polynomial in \(T\) and \(\Delta^n(\id_E)(\underline{X}) \in \kk^\circ\{\underline{X}\}^d\), 
+        we have \(f_n = \binom{T}{n} \Delta^n(\id_E)(\underline{X}) \in \kk\{\underline{X}, T\}^d\).
+        Note that for each \(n \in \bbZ_{\geq 0}\), then \(|n!|_{\kk} \geq r_p^n\).
+        Hence we have 
+        \[ \left\|\binom{T}{n}\right\| \leq s^n r_p^{-n} \]
+        since \(s > 1\).
+        By \cref{lem:norm_of_difference_operators_of_Phi}, we have
+        \[ \|f_n\| \leq \left\| \binom{T}{n} \right\| \cdot \|\Delta^n(\id_E)\| \leq s^n r_p^{-n} r^n = (s r / r_p)^n. \]
+        Since \(s r / r_p < 1\), the series \(F(\underline{X}, T) = \sum_{n=0}^\infty f_n\) converges in \(\kk\{\underline{X}, T/s\}^d\).
+        By \cref{lem:difference_operators_and_binomial_theorem}, we have \(F(x, n) = \Phi^n(x)\) for each \(n \in \bbZ_{\geq 0}\) and each \(x \in E\).
+        The uniqueness of \(F\) follows from \Yang{ref}.
     \end{proof}
 
     \Yang{If \(f\) is invertible, can we see that \(g\) is unique?}
@@ -79,12 +90,14 @@
     \end{example}
 
 
-\subsection{Pick integral models}
+\subsection{Interpolation on an analytic open subset of morphisms}
+% \subsection{Pick integral models}
+
+    Let \(f: X \ratmap X\) be a dominant rational self-map of a projective variety of dimension \(d\) defined over a finitely generated field \(\kk\) over \(\bbQ\).
+    We try to find some analytic local interpolation of the iterates of \(f\) on \(X(\bbC_p)\) for some prime \(p\).
 
     \begin{lemma}\label{lem:existence_of_good_model_for_smooth_things}
-        Let \(f: X \ratmap X\) be a dominant rational self-map of a projective variety defined over a finitely generated field \(\kk\) over \(\bbQ\).
-        
-        Then there exists a subring \(R \subseteq \kk\) of finite type over \(\bbZ\), 
+        There exists a subring \(R \subseteq \kk\) of finite type over \(\bbZ\), 
         a projective scheme \(\calX\) over \(\Spec R\) with generic fiber \(X\), 
         and a rational self-map \(\calf: \calX \ratmap \calX\) over \(\Spec R\) with generic fiber \(f\) 
         such that 
@@ -99,20 +112,15 @@
 
     \Yang{We can embedd \(R\) into \(\bbC_p\) for some \(p\).}
 
-
-
-
-\subsection{Interpolation on an analytic open subset of morphisms}
-
-    The main reference of this section is \cite[Section 3.2]{Xie25ZDOsurfaces}.
-    We first state the main theorem of this section.
+    % The main reference of this section is \cite[Section 3.2]{Xie25ZDOsurfaces}.
+    % We first state the main theorem of this section.
 
     \begin{theorem}[{ref.\cite[Proposition 3.24]{Xie25ZDOsurfaces}}]\label{thm:Xie25_DML_for_adelic_general_points}
-        Let \(\kk\) be a finitely generated field over \(\bbQ\), \(X\) a projective variety defined over \(\kk\), and \(f \colon X \ratmap X\) a dominant rational self-map defined over \(\kk\).
+        % Let \(\kk\) be a finitely generated field over \(\bbQ\), \(X\) a projective variety defined over \(\kk\), and \(f \colon X \ratmap X\) a dominant rational self-map defined over \(\kk\).
         
-        There exists an iteration \(g = f^m\) of \(f\), an embedding \(\kk \hookrightarrow \bbC_p\) for some prime \(p\geq 3\), an analytic open subset \(U \subseteq X(\bbC_p)\) and an analytic map \(\Phi: \bbC_p^\circ \times U \to U\) such that
-        \begin{enumerate}[label=(\arabic*)]
-            \item \(U \cong (\bbC_p^{\circ})^d\) analytically, where \(d = \dim X\);
+        There exists an iteration \(g = f^m\) of \(f\), an embedding \(\kk \hookrightarrow \bbC_p\) for some prime \(p\geq 3\), 
+        an analytic open subset \(U\cong (\bbC_p^{\circ})^d \subseteq X(\bbC_p)\) and an analytic map \(\Phi: \bbC_p^\circ \times U \to U\) such that
+        \begin{enumerate}
             \item \(g\) is well-defined on \(U\), \(U\) is invariant under \(g\) and \(\|g|_U - \id_U\| < 1/p\);
             \item \(\Phi(n, x) = g^n(x)\) for each \(n \in \bbZ_{\geq 0}\) and each \(x \in U\);
         \end{enumerate}
@@ -120,6 +128,7 @@
 
 
     \begin{example}\label{eg:interpolation_for_Jordan_block_of_elliptic_curves}
-        Let \(X = E \times E\) with \(E\) an elliptic curve without complex multiplication defined over a number field \(\kk\), and let \(f \colon X \to X\) be the endomorphism defined by \((a,b) \mapsto (a + b, b)\).
+        Let \(X = E \times E\) with \(E\) an elliptic curve without complex multiplication defined over a number field \(\kk\), 
+        and let \(f \colon X \to X\) be the endomorphism defined by \((a,b) \mapsto (a + b, b)\).
         \Yang{To be continued.}
     \end{example}
